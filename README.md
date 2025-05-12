@@ -3,7 +3,16 @@
 **Sistema de Gerenciamento de Produtos**
 
 🎯 **Objetivo**  
-Este projeto tem como objetivo criar uma solução baseada em arquitetura modular com foco em boas práticas de desenvolvimento. A aplicação possui uma **API RESTful** desenvolvida com **.NET Core** e integra-se a um banco de dados **Oracle** utilizando **Entity Framework Core** para persistência e manipulação dos dados.
+Este projeto tem como objetivo criar uma solução baseada em arquitetura modular com foco em boas práticas de desenvolvimento. A aplicação possui uma **API RESTful** desenvolvida com **.NET Core** e integra-se a um banco de dados **Oracle** utilizando **Entity Framework Core** para persistência e manipulação dos dados. O Objetivo é realizar o gerenciamento de **Produtos** sabendo que cada produto contem algumas informações.
+
+JSon
+```
+{
+  "nome": "Smartphone Samsung",
+  "descricao": "Galaxy S23 Ultra 256GB",
+  "valor": 4999.99
+}
+```
 
 ---
 
