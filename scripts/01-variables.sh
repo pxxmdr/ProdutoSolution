@@ -1,1 +1,9 @@
-
+export AZ_LOC="brazilsouth"
+export AZ_RG="rg-dimdim"
+export AZ_SQL_SRV="sql-dimdim$RANDOM"
+export AZ_SQL_ADMIN="sqladmin"
+export AZ_DB="db-dimdim"
+export AZ_PLAN="plan-dimdim-linux"
+export AZ_WEB="app-dimdim-api"
+export AZ_APPINS="appi-dimdim"
+export AZ_LAW="law-dimdim"
