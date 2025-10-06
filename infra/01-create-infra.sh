@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 set -e
 
 az account show -o table
@@ -7,11 +6,13 @@ AZ_LOC="brazilsouth"
 AZ_RG="rg-dimdim"
 AZ_SQL_SRV="sql-dimdim$RANDOM"
 AZ_SQL_ADMIN="sqladmin"
-AZ_SQL_PASS="TroqueAqui!123"
+AZ_SQL_PASS="${AZ_SQL_PASS:-${SQL_ADMIN_PASS:-}}"
+if [ -z "$AZ_SQL_PASS" ]; then read -s -p "SQL password: " AZ_SQL_PASS; echo; fi
 AZ_DB="db-dimdim"
 AZ_PLAN="plan-dimdim-linux"
 AZ_WEB="app-dimdim-api"
 AZ_APPINS="appi-dimdim"
+AZ_LAW="law-dimdim"
 
 echo $AZ_RG $AZ_SQL_SRV $AZ_DB $AZ_WEB
 
@@ -44,9 +45,7 @@ while [ "$(az provider show --namespace Microsoft.Insights --query registrationS
 
 az provider register --namespace Microsoft.OperationalInsights
 while [ "$(az provider show --namespace Microsoft.OperationalInsights --query registrationState -o tsv)" != "Registered" ]; do sleep 5; done
-echo "Providers registrados"
 
-AZ_LAW="law-dimdim"
 az monitor log-analytics workspace create -g "$AZ_RG" -n "$AZ_LAW" -l "$AZ_LOC"
 LAW_ID=$(az monitor log-analytics workspace show -g "$AZ_RG" -n "$AZ_LAW" --query id -o tsv)
 
