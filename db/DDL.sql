@@ -21,3 +21,6 @@ INSERT INTO dbo.Categoria (Nome) VALUES ('Eletrônicos'), ('Acessórios');
 INSERT INTO dbo.Produto (Nome, Descricao, Valor, CategoriaId) VALUES
 ('Smartphone Samsung', 'Galaxy S23 Ultra 256GB', 4999.99, 1);
 
+SELECT * FROM dbo.Categoria;
+SELECT * FROM dbo.Produto;
+
